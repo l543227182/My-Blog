@@ -10,7 +10,6 @@ mysql:
 
 my-blog:
   build: ./my-blog
-  image: my-blog
   ports:
    - 28080:80
   links:
