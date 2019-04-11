@@ -10,6 +10,9 @@ cd ../
 # 打包并创建镜像(不注释也可以,镜像覆盖,因此需要删除原有镜像,命令在下面,删除名称为none的镜像)
 mvn clean install -Dmaven.test.skip=true
 
+#将最新的jar包复制到目录下
+cp target/*.jar docker-extension/my-blog
+
 cd docker-extension
 
 # 停止原先运行的容器
@@ -21,7 +24,7 @@ docker-compose rm -f
 #docker ps -a | grep "Exited" | awk '{print $1 }'|xargs docker rm
 
 #删除名称为none的镜像
-#docker images|grep none|awk '{print $3 }'|xargs docker rmi
+docker images|grep none|awk '{print $3 }'|xargs docker rmi
 
 # 使用docker-compose启动多容器应用
 docker-compose up --build -d
