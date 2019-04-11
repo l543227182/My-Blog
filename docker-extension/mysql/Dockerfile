@@ -10,6 +10,6 @@ ENV MYSQL_ALLOW_EMPTY_PASSWORD yes
 COPY setup.sh /mysql/setup.sh
 COPY schema.sql /mysql/schema.sql
 COPY privileges.sql /mysql/privileges.sql
-
+VOLUME ["/var/lib/mysql"]
 #设置容器启动时执行的命令
 CMD ["bash", "/mysql/setup.sh"]
