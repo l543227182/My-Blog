@@ -14,5 +14,8 @@ my-blog:
   build: ./my-blog
   ports:
    - 80:28080
+  volumes:
+   - /var/log/blog:/logs
+   - /root/blog/upload:/upload
   links:
    - mysql
