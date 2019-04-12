@@ -1,5 +1,7 @@
 mysql:
   build: ./mysql
+  volumes:
+      - /root/blog/mysql:/var/lib/mysql
 # 考虑到安全问题,正式环境时不暴露端口到宿主机
   expose:
       - "3306"
