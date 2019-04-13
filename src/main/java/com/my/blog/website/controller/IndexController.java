@@ -303,7 +303,7 @@ public class IndexController extends BaseController {
         if (null == contents) {
             return this.render_404();
         }
-        if (contents.getAllowComment()) {
+        if (contents.getAllowComment() != null && contents.getAllowComment()) {
             String cp = request.getParameter("cp");
             if (StringUtils.isBlank(cp)) {
                 cp = "1";
